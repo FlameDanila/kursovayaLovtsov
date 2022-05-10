@@ -1,0 +1,32 @@
+﻿<Window x:Class="try3.kategorii"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:try3"
+        mc:Ignorable="d"
+        Title="Категории" Height="450" Width="800" MinHeight="450" MinWidth="800" MaxHeight="450" MaxWidth="800" WindowStartupLocation="CenterScreen" Icon="/icon.jpg">
+    <Grid Background="#FFC4D2CE">
+        <ListView Name="listView" HorizontalAlignment="Center" Height="187" Margin="0,40,0,0" VerticalAlignment="Top" Width="756">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Width="auto" Orientation="Horizontal">
+                            <TextBlock Text="Название:" Width="520" FontSize="30"><Run FontSize="30" Text="{Binding name}"/></TextBlock>
+                        </StackPanel>
+                        <Button Content="Удалить" Width="100" Click="DeleteClick" Height="40"></Button>
+                        <Grid Width="20"/>
+                        <Button Content="Изменить" Width="100" Click="RedactClick" Height="40"></Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox Name="NameText" HorizontalAlignment="Left" Height="23" Margin="293,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="290"/>
+        <TextBox Name="SearchText" HorizontalAlignment="Left" Height="25" Margin="261,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" TextChanged="NameText_TextChanged" FontSize="18"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="447,382,0,0" VerticalAlignment="Top" Width="136" Click="AppendClick" FontSize="16" Background="White"/>
+        <Button Content="🗘" HorizontalAlignment="Left" Margin="618,7,0,0" VerticalAlignment="Top" Width="27" Click="RefreshClick" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" Height="25"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="293,382,0,0" VerticalAlignment="Top" Width="136" Click="ChangeClick" FontSize="16" Background="White"/>
+        <Button Content="Материалы" HorizontalAlignment="Left" Margin="670,373,0,0" VerticalAlignment="Top" Width="108" Click="CategoryClick" Background="White" Height="34" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="212,271,0,0" TextWrapping="Wrap" Text="Название:" VerticalAlignment="Top" Height="23" Width="auto" FontSize="16"/>
+    </Grid>
+</Window>
